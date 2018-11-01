@@ -49,6 +49,10 @@ Download our latest _stable_ [source release](https://github.com/carlosefr/kyoto
   * The installation root directory (`PREFIX`) is optional. By default it already installs into `/usr/local`;
   * If you're building on FreeBSD, use `gmake` from the ports collection instead of standard `make`.
 
+If you wish to skip the LZO or Lua dependencies, pass the proper options into the `Makefile`. Example:
+
+    $ KC_OPTIONS=--disable-lzo KT_OPTIONS=--disable-lua make
+
 Packaging
 ---------
 
