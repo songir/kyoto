@@ -57,6 +57,7 @@ bool SharedLibrary::open(const char* path) {
   SharedLibraryCore* core = (SharedLibraryCore*)opq_;
   if (core->lib) return false;
   void* lib = ::dlopen(path, RTLD_LAZY);
+  if (!lib) fprintf(stderr, "dlopen failed. file=%s, msg=%s\n", path, dlerror());
   if (!lib) return false;
   core->lib = lib;
   return true;
